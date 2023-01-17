@@ -112,6 +112,9 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             getContacts().flowOn(Dispatchers.IO)
                 .collect {
+                    it.forEachIndexed { index, s ->
+                        Log.d("TEST::", "Row: $index, Values: $s")
+                    }
                     (binding.contactsRv.adapter as ContactsAdapter).submitList(it)
                 }
         }
