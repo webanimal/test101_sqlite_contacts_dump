@@ -112,6 +112,9 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             getContacts().flowOn(Dispatchers.IO)
                 .collect {
+                    it.forEachIndexed { index, s ->
+                        Log.d("TEST::", "Row: $index, Values: $s")
+                    }
                     (binding.contactsRv.adapter as ContactsAdapter).submitList(it)
                 }
         }
@@ -150,7 +153,7 @@ class MainActivity : AppCompatActivity() {
             sb.append(it)
             sb.append("; ")
         }
-        val item = "Column names: $sb.toString()"
+        val item = "Column names: ${sb.toString()}"
         Log.d("TEST::", item)
         contacts.add(item)
 
