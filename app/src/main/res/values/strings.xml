@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SQLITE contacts dump</string>
+
+    <string name="main_title">Contacts dump</string>
+    <string name="main_search_hint">Ведите часть имени контакта</string>
+    <string name="main_permissions_error">Для корректной работы логгера, необходимо выдать разрешения на чтения-запись контактов</string>
+</resources>
